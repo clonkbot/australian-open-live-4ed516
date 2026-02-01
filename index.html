@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Australian Open 2025 | Live Scores & Results</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --ao-blue: #0C2340;
+        --ao-blue-light: #1a3a5c;
+        --ao-lime: #C4D600;
+        --ao-orange: #FF6B35;
+        --ao-white: #FAFAFA;
+        --ao-court: #4A90D9;
+      }
+      body {
+        font-family: 'Outfit', sans-serif;
+        background: var(--ao-blue);
+      }
+      .font-display {
+        font-family: 'Bebas Neue', sans-serif;
+      }
+      @keyframes pulse-glow {
+        0%, 100% { box-shadow: 0 0 20px rgba(196, 214, 0, 0.4); }
+        50% { box-shadow: 0 0 40px rgba(196, 214, 0, 0.8); }
+      }
+      @keyframes ball-bounce {
+        0%, 100% { transform: translateY(0) scale(1); }
+        50% { transform: translateY(-8px) scale(1.05); }
+      }
+      @keyframes slide-in-left {
+        from { opacity: 0; transform: translateX(-60px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes slide-in-right {
+        from { opacity: 0; transform: translateX(60px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes slide-up {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes score-flash {
+        0%, 100% { background: transparent; }
+        50% { background: rgba(196, 214, 0, 0.3); }
+      }
+      .animate-slide-left { animation: slide-in-left 0.8s ease-out forwards; }
+      .animate-slide-right { animation: slide-in-right 0.8s ease-out forwards; }
+      .animate-slide-up { animation: slide-up 0.6s ease-out forwards; }
+      .animate-fade { animation: fade-in 1s ease-out forwards; }
+      .animate-ball { animation: ball-bounce 2s ease-in-out infinite; }
+      .animate-glow { animation: pulse-glow 2s ease-in-out infinite; }
+      .animate-score { animation: score-flash 1.5s ease-in-out infinite; }
+      .delay-100 { animation-delay: 0.1s; }
+      .delay-200 { animation-delay: 0.2s; }
+      .delay-300 { animation-delay: 0.3s; }
+      .delay-400 { animation-delay: 0.4s; }
+      .delay-500 { animation-delay: 0.5s; }
+      .diagonal-slice {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      }
+      .diagonal-slice-reverse {
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+      }
+      .court-pattern {
+        background: 
+          linear-gradient(135deg, transparent 49.5%, rgba(255,255,255,0.03) 49.5%, rgba(255,255,255,0.03) 50.5%, transparent 50.5%),
+          linear-gradient(45deg, transparent 49.5%, rgba(255,255,255,0.02) 49.5%, rgba(255,255,255,0.02) 50.5%, transparent 50.5%);
+        background-size: 60px 60px;
+      }
+      .noise-overlay {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        opacity: 0.03;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
